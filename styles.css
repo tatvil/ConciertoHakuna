@@ -44,7 +44,7 @@ body {
 }
 
 h1, h1 a {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 10px;
     color: var(--color-blanco);
     text-shadow: var(--color-blanco) 0 0 10px;
@@ -117,14 +117,14 @@ footer .enlace, footer .enlace a {
 /* Responsive */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2rem;
-    }
-    h2 {
         font-size: 1rem;
     }
+    h2 {
+        font-size: .8rem;
+    }
     .time-box {
-        width: 70px;
-        padding: 10px;
+        width: 65px;
+        padding: 5px;
     }
     .time-box span {
         font-size: 1.5rem;

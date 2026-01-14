@@ -1,29 +1,37 @@
 :root {
-    --color-azul: #3498db;
-    --color-dorado: #f4d03f;
-    --color-oscuro: #1f3c88;
-    --color-blanco: #ffffff;
+    --color-azul: #2c3e50;              /* Azul profundo, íntimo */
+    --color-dorado: #d4b26a;            /* Dorado cálido */
+    --color-oscuro: #1a1a1a;            /* Negro suave */
+    --color-blanco: #fdfaf5;            /* Blanco cálido tipo papel */
     --color-negro: #000000;
-    --color-transparente: rgba(255, 255, 255, 0.15);
-    --color-transparente-hover: rgba(255, 255, 255, 0.25);
-
+    --color-transparente: rgba(255, 255, 255, 0.08);
+    --color-transparente-hover: rgba(255, 255, 255, 0.15);
 }
 
-
-/* Fondo con degradado animado azul-dorado */
+/* Fondo con degradado suave y emocional */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: "Libre Baskerville", serif;
     color: var(--color-blanco);
-    background: linear-gradient(135deg, var(--color-azul), var(--color-oscuro), var(--color-dorado));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background: linear-gradient(135deg, var(--color-oscuro), var(--color-azul));
+    background-size: 200% 200%;
+    animation: gradient 18s ease-in-out infinite;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    position: relative;
+}
+
+/* Overlay cálido tipo luz de escenario */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.08), transparent 70%);
+    pointer-events: none;
 }
 
 /* Animación del degradado */
@@ -43,17 +51,27 @@ body {
     justify-content: center;
 }
 
+/* Títulos estilo manuscrito artesanal */
+h1, h2, h3 { 
+    font-family: "Amatic SC", cursive; 
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
+
+/* Título principal estilo cartel de concierto */
 h1, h1 a {
     font-size: 3.5rem;
     margin-bottom: 10px;
     color: var(--color-blanco);
-    text-shadow: var(--color-blanco) 0 0 10px;
     text-decoration: none;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+    border-bottom: 3px solid var(--color-dorado);
+    padding-bottom: 5px;
 }
 
 h2 {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
     color: var(--color-blanco);
 }
 
@@ -65,14 +83,16 @@ h2 {
     flex-wrap: wrap;
 }
 
+/* Cajas estilo artesanal */
 .time-box {
-    background: var(--color-transparente);
-    border: 2px solid var(--color-blanco);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-dorado);
+    border-radius: 8px;
     padding: 15px;
     width: 90px;
     text-align: center;
     transition: transform 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(2px);
 }
 
 .time-box:hover {
@@ -81,26 +101,28 @@ h2 {
 }
 
 .time-box span {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     display: block;
-    color: var(--color-blancol); /* Azul para los números */
+    color: var(--color-blanco);
 }
 
 .time-box p {
-    color: var(--color-dorado); /* Dorado para las etiquetas */
+    color: var(--color-dorado);
+    font-weight: 600;
 }
 
 /* Animaciones suaves */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    animation: fadeIn 2.2s ease forwards;
 }
 
 @keyframes fadeIn {
     to { opacity: 1; }
 }
 
+/* Footer */
 footer {
     margin-top: 40px;
     font-size: 0.9rem;
@@ -117,17 +139,16 @@ footer .enlace, footer .enlace a {
 /* Responsive */
 @media (max-width: 600px) {
     h1 {
-        font-size: 1rem;
+        font-size: 2rem;
     }
     h2 {
-        font-size: .8rem;
+        font-size: 1rem;
     }
     .time-box {
-        width: 60px;
-        padding: 5px;
+        width: 65px;
+        padding: 8px;
     }
     .time-box span {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
-

@@ -1,6 +1,6 @@
 
 // Fecha objetivo: 10 enero 2026 a las 20:00
-const targetDate = new Date("January 10, 2026 20:00:00").getTime();
+const targetDate = new Date("January 23, 2026 20:00:00").getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
